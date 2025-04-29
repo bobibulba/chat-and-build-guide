@@ -1,0 +1,78 @@
+---
+interface Props {
+	question: string;
+	answer: string;
+}
+
+const { question, answer } = Astro.props;
+---
+
+<div class="faq-item">
+	<button class="faq-question">
+		<span>{question}</span>
+		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><polyline points="6 9 12 15 18 9"></polyline></svg>
+	</button>
+	<div class="faq-answer">
+		<p>{answer}</p>
+	</div>
+</div>
+
+<script>
+	// Add click event listeners to all FAQ questions
+	document.querySelectorAll('.faq-question').forEach(question => {
+		question.addEventListener('click', () => {
+			const item = question.parentElement;
+			item.classList.toggle('active');
+		});
+	});
+</script>
+
+<style>
+	.faq-item {
+		border: 1px solid rgb(var(--border));
+		border-radius: 8px;
+		margin-bottom: 1rem;
+		overflow: hidden;
+	}
+	
+	.faq-question {
+		width: 100%;
+		background: none;
+		border: none;
+		padding: 1rem 1.5rem;
+		text-align: left;
+		font-size: 1.1rem;
+		font-weight: 500;
+		cursor: pointer;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+	.faq-question:hover {
+		background-color: rgba(var(--primary), 0.05);
+	}
+	
+	.icon {
+		transition: transform 0.3s;
+	}
+	
+	.faq-answer {
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s ease-out;
+	}
+	
+	.faq-answer p {
+		padding: 0 1.5rem 1.5rem;
+		margin: 0;
+	}
+	
+	.faq-item.active .icon {
+		transform: rotate(180deg);
+	}
+	
+	.faq-item.active .faq-answer {
+		max-height: 500px;
+	}
+</style>

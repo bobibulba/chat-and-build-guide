@@ -1,0 +1,227 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FAQItem from '../components/FAQItem.astro';
+---
+
+<Layout title="ChatAndBuild Troubleshooting Guide">
+	<div class="container">
+		<h1>Troubleshooting <span class="text-gradient">ChatAndBuild</span></h1>
+		<p class="intro">Encountering issues with your ChatAndBuild project? This guide covers common problems and their solutions to help you get back on track quickly.</p>
+		
+		<div class="search-container">
+			<input type="text" id="search-faq" placeholder="Search for a specific issue..." />
+			<button id="search-button">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+			</button>
+		</div>
+		
+		<h2>Common Issues and Solutions</h2>
+		
+		<div class="faq-container">
+			<FAQItem 
+				question="My application isn't loading or shows a blank screen" 
+				answer="This is often caused by a JavaScript error. Try asking ChatAndBuild to check for errors in the console and fix them. You can say: 'My app is showing a blank screen. Can you check for JavaScript errors and fix them?'"
+			/>
+			
+			<FAQItem 
+				question="The styling doesn't look right on my device" 
+				answer="Your application might not be fully responsive. Ask ChatAndBuild to make your application responsive for different screen sizes: 'The layout looks broken on my phone. Can you make it responsive for mobile devices?'"
+			/>
+			
+			<FAQItem 
+				question="I'm getting an error when submitting a form" 
+				answer="Form submission errors can happen for various reasons. Ask ChatAndBuild to debug the form submission: 'I'm getting an error when submitting the contact form. Can you fix it and add proper validation?'"
+			/>
+			
+			<FAQItem 
+				question="Images are not loading" 
+				answer="Check that the image paths are correct. If you're using external images, ensure the URLs are valid. Ask ChatAndBuild: 'The images aren't loading. Can you check the image paths and fix them?'"
+			/>
+			
+			<FAQItem 
+				question="My changes aren't being saved" 
+				answer="Make sure you're giving ChatAndBuild time to process and implement your changes. If the issue persists, try refreshing the page and asking again. You can also ask: 'My recent changes to the header aren't showing up. Can you check if they were saved?'"
+			/>
+			
+			<FAQItem 
+				question="The application is slow or laggy" 
+				answer="Performance issues might be caused by inefficient code or large assets. Ask ChatAndBuild to optimize your application: 'My app feels slow. Can you optimize it for better performance?'"
+			/>
+			
+			<FAQItem 
+				question="I can't deploy my application" 
+				answer="Deployment issues can vary based on the platform. Provide ChatAndBuild with the specific error message you're seeing: 'I'm getting this error when trying to deploy: [error message]. Can you help me fix it?'"
+			/>
+			
+			<FAQItem 
+				question="My database isn't working correctly" 
+				answer="Database issues can be complex. Describe the specific problem to ChatAndBuild: 'Users can't log in and I think it's a database issue. Can you help me troubleshoot the authentication system?'"
+			/>
+			
+			<FAQItem 
+				question="I accidentally deleted something important" 
+				answer="ChatAndBuild keeps a history of your project. Ask it to restore the previous version: 'I accidentally deleted the navigation menu. Can you restore it to how it was before?'"
+			/>
+			
+			<FAQItem 
+				question="ChatAndBuild doesn't understand what I'm asking for" 
+				answer="Try rephrasing your request with more specific details. Break complex requests into smaller, clearer steps. For example, instead of 'Make it better,' say 'Can you increase the font size of the headings and add more spacing between paragraphs?'"
+			/>
+		</div>
+		
+		<h2>Debugging Techniques</h2>
+		<p>When troubleshooting issues with your ChatAndBuild project, these techniques can help identify and resolve problems:</p>
+		
+		<div class="debugging-grid">
+			<div class="card">
+				<h3>Be Specific About the Problem</h3>
+				<p>When reporting an issue to ChatAndBuild, be as specific as possible about what's happening and what you expected to happen instead. Include any error messages you see.</p>
+				<div class="example-prompt">
+					<p><strong>Good:</strong> "When I click the 'Submit' button on the contact form, I see an error message saying 'Invalid email format' even though I entered a valid email."</p>
+					<p><strong>Not as helpful:</strong> "The form doesn't work."</p>
+				</div>
+			</div>
+			
+			<div class="card">
+				<h3>Ask for Explanations</h3>
+				<p>If you don't understand why something isn't working, ask ChatAndBuild to explain the issue in simple terms. This can help you learn and make better decisions about your project.</p>
+				<div class="example-prompt">
+					<p>"Can you explain why my images aren't loading and what's causing this issue?"</p>
+				</div>
+			</div>
+			
+			<div class="card">
+				<h3>Test One Change at a Time</h3>
+				<p>When making fixes, ask ChatAndBuild to implement one change at a time, then test to see if it resolved the issue before moving on to other changes.</p>
+			</div>
+			
+			<div class="card">
+				<h3>Use the Preview to Verify Fixes</h3>
+				<p>After ChatAndBuild makes changes to fix an issue, always check the live preview to confirm that the problem is actually resolved.</p>
+			</div>
+		</div>
+		
+		<h2>When to Start Fresh</h2>
+		<p>Sometimes, it might be better to start a new project rather than trying to fix an existing one. Consider starting fresh if:</p>
+		<ul>
+			<li>Your project has accumulated many complex issues that are difficult to resolve</li>
+			<li>You want to take a completely different approach to your application</li>
+			<li>You've learned from your mistakes and want to apply those lessons to a clean slate</li>
+		</ul>
+		
+		<div class="tip">
+			<strong>Tip:</strong> Before starting fresh, ask ChatAndBuild to summarize the key components and code from your current project that you might want to reuse in your new project.
+		</div>
+		
+		<h2>Getting Additional Help</h2>
+		<p>If you've tried the solutions in this guide and are still experiencing issues, you can:</p>
+		<ul>
+			<li>Ask ChatAndBuild directly: "I've tried troubleshooting but still have issues. Can you help me diagnose what's wrong?"</li>
+			<li>Visit the <a href="https://www.chatandbuild.com/community" target="_blank">ChatAndBuild Community Forum</a> to see if others have encountered and solved similar issues</li>
+			<li>Contact support through the help button in the ChatAndBuild interface</li>
+		</ul>
+		
+		<div class="warning">
+			<strong>Remember:</strong> No problem is too small or too "beginner" to ask about. ChatAndBuild is designed to help users of all experience levels!
+		</div>
+	</div>
+</Layout>
+
+<script>
+	// Search functionality for FAQs
+	document.addEventListener('DOMContentLoaded', () => {
+		const searchInput = document.getElementById('search-faq');
+		const searchButton = document.getElementById('search-button');
+		const faqItems = document.querySelectorAll('.faq-item');
+		
+		const performSearch = () => {
+			const searchTerm = searchInput.value.toLowerCase();
+			
+			faqItems.forEach(item => {
+				const question = item.querySelector('.faq-question span').textContent.toLowerCase();
+				const answer = item.querySelector('.faq-answer p').textContent.toLowerCase();
+				
+				if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+					item.style.display = 'block';
+					if (searchTerm.length > 2) {
+						item.classList.add('active');
+					}
+				} else {
+					item.style.display = 'none';
+				}
+			});
+			
+			// If search is cleared, reset display
+			if (searchTerm === '') {
+				faqItems.forEach(item => {
+					item.style.display = 'block';
+					item.classList.remove('active');
+				});
+			}
+		};
+		
+		searchInput.addEventListener('input', performSearch);
+		searchButton.addEventListener('click', performSearch);
+	});
+</script>
+
+<style>
+	.intro {
+		font-size: 1.2rem;
+		margin-bottom: 2rem;
+		max-width: 800px;
+	}
+	
+	.search-container {
+		display: flex;
+		margin-bottom: 2rem;
+		max-width: 600px;
+	}
+	
+	#search-faq {
+		flex: 1;
+		padding: 0.75rem 1rem;
+		border: 1px solid rgb(var(--border));
+		border-radius: 4px 0 0 4px;
+		font-size: 1rem;
+	}
+	
+	#search-button {
+		background-color: rgb(var(--primary));
+		color: white;
+		border: none;
+		border-radius: 0 4px 4px 0;
+		padding: 0 1rem;
+		cursor: pointer;
+	}
+	
+	.faq-container {
+		margin-bottom: 3rem;
+		max-width: 900px;
+	}
+	
+	.debugging-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+		gap: 1.5rem;
+		margin: 2rem 0;
+		max-width: 1200px;
+	}
+	
+	.example-prompt {
+		background-color: rgba(var(--primary), 0.05);
+		border-radius: 4px;
+		padding: 1rem;
+		margin-top: 0.5rem;
+	}
+	
+	.example-prompt p {
+		margin: 0.5rem 0;
+	}
+	
+	@media (max-width: 768px) {
+		.debugging-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

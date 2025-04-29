@@ -1,0 +1,218 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ExampleCard from '../components/ExampleCard.astro';
+---
+
+<Layout title="ChatAndBuild Examples">
+	<div class="container">
+		<h1>Example Projects with <span class="text-gradient">ChatAndBuild</span></h1>
+		<p class="intro">Browse these example projects to get inspiration for your own creations. Each example includes a description of what was built and how it was accomplished using ChatAndBuild.</p>
+		
+		<div class="filters">
+			<button class="filter-btn active" data-filter="all">All</button>
+			<button class="filter-btn" data-filter="Beginner">Beginner</button>
+			<button class="filter-btn" data-filter="Intermediate">Intermediate</button>
+			<button class="filter-btn" data-filter="Advanced">Advanced</button>
+		</div>
+		
+		<div class="examples-grid">
+			<ExampleCard 
+				title="Personal Portfolio" 
+				description="A clean, responsive portfolio website with sections for about, skills, projects, and contact information."
+				image="/images/example-portfolio.png"
+				link="/examples/portfolio"
+				difficulty="Beginner"
+			/>
+			
+			<ExampleCard 
+				title="Recipe Finder App" 
+				description="Search for recipes by ingredients, save favorites, and get step-by-step cooking instructions."
+				image="/images/example-recipe.png"
+				link="/examples/recipe-finder"
+				difficulty="Beginner"
+			/>
+			
+			<ExampleCard 
+				title="Task Management Dashboard" 
+				description="A Trello-like task management app with drag-and-drop functionality and user authentication."
+				image="/images/example-tasks.png"
+				link="/examples/task-manager"
+				difficulty="Intermediate"
+			/>
+			
+			<ExampleCard 
+				title="E-commerce Store" 
+				description="A complete online store with product listings, shopping cart, and checkout process."
+				image="/images/example-ecommerce.png"
+				link="/examples/ecommerce"
+				difficulty="Intermediate"
+			/>
+			
+			<ExampleCard 
+				title="Social Media Dashboard" 
+				description="Track and analyze your social media presence across multiple platforms in one dashboard."
+				image="/images/example-social.png"
+				link="/examples/social-dashboard"
+				difficulty="Intermediate"
+			/>
+			
+			<ExampleCard 
+				title="Real-time Chat Application" 
+				description="A Slack-like chat application with real-time messaging, channels, and direct messages."
+				image="/images/example-chat.png"
+				link="/examples/chat-app"
+				difficulty="Advanced"
+			/>
+		</div>
+		
+		<h2>How to Use These Examples</h2>
+		<p>These examples are meant to inspire your own projects and show what's possible with ChatAndBuild. Here's how to make the most of them:</p>
+		
+		<div class="step-container">
+			<div class="step">
+				<div class="step-number">1</div>
+				<div class="step-content">
+					<h3>Explore the Examples</h3>
+					<p>Click on any example to see more details about how it was built, including the initial prompt used, key features, and screenshots of the final product.</p>
+				</div>
+			</div>
+			
+			<div class="step">
+				<div class="step-number">2</div>
+				<div class="step-content">
+					<h3>Use as a Starting Point</h3>
+					<p>When starting a new project in ChatAndBuild, you can reference these examples in your initial prompt. For instance: "I'd like to build something similar to the Recipe Finder example, but focused on cocktail recipes instead."</p>
+				</div>
+			</div>
+			
+			<div class="step">
+				<div class="step-number">3</div>
+				<div class="step-content">
+					<h3>Mix and Match Features</h3>
+					<p>You don't have to copy an example exactly. Feel free to combine features from different examples or add your own unique ideas.</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="tip">
+			<strong>Tip:</strong> When describing your project to ChatAndBuild, it's helpful to mention specific features or design elements you like from these examples. This gives the AI a clearer understanding of your vision.
+		</div>
+		
+		<h2>Start with a Template</h2>
+		<p>If you're not sure where to begin, you can ask ChatAndBuild to start with one of these templates. Just mention the example name in your initial prompt:</p>
+		
+		<div class="example-prompt">
+			<p>"I'd like to start with the Personal Portfolio template and customize it for my photography business."</p>
+		</div>
+		
+		<div class="cta-box">
+			<h3>Have an Idea? Build It Now!</h3>
+			<p>Ready to create your own project inspired by these examples? Start a new conversation with ChatAndBuild and bring your idea to life!</p>
+			<a href="https://www.chatandbuild.com" target="_blank" class="btn">Create New Project</a>
+		</div>
+	</div>
+</Layout>
+
+<script>
+	// Filter functionality for examples
+	document.addEventListener('DOMContentLoaded', () => {
+		const filterButtons = document.querySelectorAll('.filter-btn');
+		const examples = document.querySelectorAll('.example-card');
+		
+		filterButtons.forEach(button => {
+			button.addEventListener('click', () => {
+				// Update active button
+				filterButtons.forEach(btn => btn.classList.remove('active'));
+				button.classList.add('active');
+				
+				// Filter examples
+				const filter = button.getAttribute('data-filter');
+				
+				examples.forEach(example => {
+					if (filter === 'all') {
+						example.style.display = 'block';
+					} else {
+						const difficulty = example.querySelector('.difficulty-badge').textContent.trim();
+						example.style.display = difficulty === filter ? 'block' : 'none';
+					}
+				});
+			});
+		});
+	});
+</script>
+
+<style>
+	.intro {
+		font-size: 1.2rem;
+		margin-bottom: 2rem;
+	}
+	
+	.filters {
+		display: flex;
+		gap: 0.5rem;
+		margin-bottom: 2rem;
+		flex-wrap: wrap;
+	}
+	
+	.filter-btn {
+		background: none;
+		border: 1px solid rgb(var(--primary));
+		color: rgb(var(--primary));
+		padding: 0.5rem 1rem;
+		border-radius: 9999px;
+		cursor: pointer;
+		font-weight: 500;
+		transition: all 0.2s;
+	}
+	
+	.filter-btn:hover {
+		background-color: rgba(var(--primary), 0.1);
+	}
+	
+	.filter-btn.active {
+		background-color: rgb(var(--primary));
+		color: white;
+	}
+	
+	.examples-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		gap: 2rem;
+		margin-bottom: 3rem;
+	}
+	
+	.example-prompt {
+		background-color: rgba(var(--primary), 0.1);
+		border-radius: 8px;
+		padding: 1rem;
+		margin: 1rem 0;
+		border-left: 4px solid rgb(var(--primary));
+	}
+	
+	.example-prompt p {
+		margin: 0;
+		font-style: italic;
+	}
+	
+	.cta-box {
+		background-color: rgba(var(--primary), 0.1);
+		border-radius: 8px;
+		padding: 2rem;
+		margin-top: 3rem;
+		text-align: center;
+	}
+	
+	.cta-box h3 {
+		margin-top: 0;
+	}
+	
+	.cta-box .btn {
+		margin-top: 1rem;
+	}
+	
+	@media (max-width: 768px) {
+		.examples-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
